@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
+const port = 5500;
 
-app.get("/", function (req, res, next) {
-  res.json({
-    "status": "Success!"
-  });
+app.get("/", (req, res, next) => {
+  res.send(
+    `App listening at port ${port}`
+  );
 
-}); 
+});
 
-app.listen(5500, function(){
+app.listen(port, () => {
   console.log("Listening...")
 });
